@@ -1,41 +1,10 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:instagram/user_model.dart';
 
 class AccountPage extends StatelessWidget {
-  AccountPage({Key? key}) : super(key: key);
-  List<dynamic> photoAccPage = [
-    'assets/images/husky1.jfif',
-    'assets/images/husky4.jfif',
-    'assets/images/IMG_4290.jpg',
-    'assets/images/IMG_4404.jpg',
-    'assets/images/Jack.jfif',
-    'assets/images/jasmin.jpg',
-    'assets/images/Riem.jpg',
-    'assets/images/chan.jpg',
-    'assets/images/husky1.jfif',
-    'assets/images/husky4.jfif',
-    'assets/images/IMG_4290.jpg',
-    'assets/images/IMG_4404.jpg',
-    'assets/images/Jack.jfif',
-    'assets/images/jasmin.jpg',
-    'assets/images/Riem.jpg',
-    'assets/images/chan.jpg',
-    'assets/images/husky1.jfif',
-    'assets/images/husky4.jfif',
-    'assets/images/IMG_4290.jpg',
-    'assets/images/IMG_4404.jpg',
-    'assets/images/Jack.jfif',
-    'assets/images/jasmin.jpg',
-    'assets/images/Riem.jpg',
-    'assets/images/chan.jpg',
-    'assets/images/husky1.jfif',
-    'assets/images/husky4.jfif',
-    'assets/images/IMG_4290.jpg',
-    'assets/images/IMG_4404.jpg',
-    'assets/images/Jack.jfif',
-    'assets/images/jasmin.jpg',
-    'assets/images/Riem.jpg',
-    'assets/images/chan.jpg',
-  ];
+  const AccountPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,18 +26,319 @@ class AccountPage extends StatelessWidget {
                             fontSize: 25, fontWeight: FontWeight.bold),
                       ),
                       IconButton(
-                          icon: const Icon(Icons.keyboard_arrow_down_rounded),
-                          onPressed: () => print('Create')),
+                        icon: const Icon(Icons.keyboard_arrow_down_rounded),
+                        onPressed: () {
+                          showModalBottomSheet(
+                              isScrollControlled: true,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16)),
+                              constraints: const BoxConstraints(
+                                  maxHeight: 470, maxWidth: double.infinity),
+                              context: context,
+                              builder: (BuildContext context) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        'Keep up with the smaller group of friends',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        'Create another account to stay in touch with a group of your friends',
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      Container(
+                                        width: double.infinity,
+                                        child: ElevatedButton(
+                                          child: Text('Try a new account'),
+                                          onPressed: () {},
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                      )
+                                    ],
+                                  ),
+                                );
+                              });
+                          ;
+                        },
+                      ),
                     ],
                   ),
                   Row(
                     children: [
                       IconButton(
-                          icon: const Icon(Icons.add_box_outlined),
-                          onPressed: () => print('chat')),
+                        icon: const Icon(Icons.add_box_outlined),
+                        onPressed: () {
+                          showModalBottomSheet(
+                              isScrollControlled: true,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16)),
+                              constraints: const BoxConstraints(
+                                maxHeight: 470,
+                              ),
+                              context: context,
+                              builder: (BuildContext context) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: const [
+                                      Padding(
+                                        padding: EdgeInsets.all(16.0),
+                                        child: Text(
+                                          'Create',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                      ),
+                                      ListTile(
+                                        leading: Icon(
+                                          Icons.movie_filter_outlined,
+                                        ),
+                                        title: Text(
+                                          'Reel',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons.menu_book_outlined),
+                                        title: Text(
+                                          'Post',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons
+                                            .collections_bookmark_outlined),
+                                        title: Text(
+                                          'Story',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons.menu),
+                                        title: Text(
+                                          'Story highlight ',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading:
+                                            Icon(Icons.star_border_outlined),
+                                        title: Text(
+                                          'Live',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons.add_box_outlined),
+                                        title: Text(
+                                          'Guide',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(),
+                                    ],
+                                  ),
+                                );
+                              });
+                          ;
+                        },
+                      ),
                       IconButton(
-                          icon: const Icon(Icons.menu),
-                          onPressed: () => print('More')),
+                        icon: const Icon(Icons.menu),
+                        onPressed: () {
+                          showModalBottomSheet(
+                              isScrollControlled: true,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16)),
+                              constraints: const BoxConstraints(
+                                maxHeight: 750,
+                              ),
+                              context: context,
+                              builder: (BuildContext context) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: const [
+                                      ListTile(
+                                        leading: Icon(Icons.settings),
+                                        title: Text(
+                                          'Setting',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons.av_timer_outlined),
+                                        title: Text(
+                                          'Scheduled content',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons.more_time),
+                                        title: Text(
+                                          'Your activity',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading: Icon(
+                                          Icons.timer_sharp,
+                                        ),
+                                        title: Text(
+                                          'Archive',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons.timelapse_outlined),
+                                        title: Text(
+                                          'Insights',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons.qr_code),
+                                        title: Text(
+                                          'QR code',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading: Icon(
+                                          Icons.bookmarks_outlined,
+                                        ),
+                                        title: Text(
+                                          'Save',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons.payment_outlined),
+                                        title: Text(
+                                          'Orders and payments',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons
+                                            .collections_bookmark_outlined),
+                                        title: Text(
+                                          'Digital collectibles',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons.menu),
+                                        title: Text(
+                                          'Close friends',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading:
+                                            Icon(Icons.star_border_outlined),
+                                        title: Text(
+                                          'Favorites',
+                                        ),
+                                      ),
+                                      Divider(
+                                        height: 1,
+                                        thickness: 1,
+                                        indent: 70,
+                                      ),
+                                      ListTile(
+                                        leading: Icon(Icons.add_box_outlined),
+                                        title: Text(
+                                          'Discover people',
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              });
+                          ;
+                        },
+                      )
                     ],
                   ),
                 ],
@@ -116,13 +386,13 @@ class AccountPage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 50),
                       child: Column(
-                        children: const [
+                        children: [
                           Text(
-                            '6',
-                            style: TextStyle(
+                            (photo.length).toString(),
+                            style: const TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 15),
                           ),
-                          Text('Posts'),
+                          const Text('Posts'),
                         ],
                       ),
                     ),
@@ -490,11 +760,11 @@ class AccountPage extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.yellow,
                     image: DecorationImage(
-                        image: AssetImage('${photoAccPage[index]}'),
+                        image: AssetImage('${photo[index]}'),
                         fit: BoxFit.cover),
                   ),
                 ),
-                itemCount: photoAccPage.length,
+                itemCount: photo.length,
               ),
             ],
           ),

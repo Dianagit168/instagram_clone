@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_const
 
 import 'package:flutter/material.dart';
+import 'package:instagram/homepage.dart';
 
 class CreatePage extends StatelessWidget {
   CreatePage({Key? key}) : super(key: key);
@@ -54,19 +55,25 @@ class CreatePage extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Icon(
-                      Icons.close,
-                      color: Colors.white,
-                    ),
-                    Text(
+                  children: [
+                    IconButton(
+                        onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomeScreen(),
+                            )),
+                        icon: const Icon(
+                          Icons.close,
+                          color: Colors.white,
+                        )),
+                    const Text(
                       'New post',
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 15),
                     ),
-                    Text(
+                    const Text(
                       'Next',
                       style: TextStyle(
                           color: Colors.grey,

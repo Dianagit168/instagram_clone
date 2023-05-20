@@ -2,46 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:instagram/user_model.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class SearchPage extends StatelessWidget {
   SearchPage({
     Key? key,
   }) : super(key: key);
-  List<dynamic> photosearchPage = [
-    'assets/images/husky1.jfif',
-    'assets/images/husky4.jfif',
-    'assets/images/IMG_4290.jpg',
-    'assets/images/IMG_4404.jpg',
-    'assets/images/Jack.jfif',
-    'assets/images/jasmin.jpg',
-    'assets/images/Riem.jpg',
-    'assets/images/chan.jpg',
-    'assets/images/husky1.jfif',
-    'assets/images/husky4.jfif',
-    'assets/images/IMG_4290.jpg',
-    'assets/images/IMG_4404.jpg',
-    'assets/images/Jack.jfif',
-    'assets/images/jasmin.jpg',
-    'assets/images/Riem.jpg',
-    'assets/images/chan.jpg',
-    'assets/images/husky1.jfif',
-    'assets/images/husky4.jfif',
-    'assets/images/IMG_4290.jpg',
-    'assets/images/IMG_4404.jpg',
-    'assets/images/Jack.jfif',
-    'assets/images/jasmin.jpg',
-    'assets/images/Riem.jpg',
-    'assets/images/chan.jpg',
-    'assets/images/husky1.jfif',
-    'assets/images/husky4.jfif',
-    'assets/images/IMG_4290.jpg',
-    'assets/images/IMG_4404.jpg',
-    'assets/images/Jack.jfif',
-    'assets/images/jasmin.jpg',
-    'assets/images/Riem.jpg',
-    'assets/images/chan.jpg',
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -87,11 +52,10 @@ class SearchPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.yellow,
                   image: DecorationImage(
-                      image: AssetImage('${photosearchPage[index]}'),
-                      fit: BoxFit.cover),
+                      image: AssetImage('${photo[index]}'), fit: BoxFit.cover),
                 ),
               ),
-              itemCount: photosearchPage.length,
+              itemCount: photo.length,
             ),
           ]),
         ),

@@ -1,8 +1,8 @@
 import 'package:expandable_text/expandable_text.dart';
 import 'package:flutter/material.dart';
 
-class FavoritePage extends StatelessWidget {
-  FavoritePage({Key? key}) : super(key: key);
+class ReelPage extends StatelessWidget {
+  ReelPage({Key? key}) : super(key: key);
   List<dynamic> photoReelPage = [
     'assets/images/husky1.jfif',
     'assets/images/husky4.jfif',

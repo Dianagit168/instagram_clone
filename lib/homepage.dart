@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram/acc_page.dart';
 import 'package:instagram/create_page.dart';
-import 'package:instagram/favorite_page.dart';
+import 'package:instagram/reel_page.dart';
 import 'package:instagram/search_page.dart';
 import 'body_homepage.dart';
 
@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Body_HomePage(),
     SearchPage(),
     CreatePage(),
-    FavoritePage(),
+    ReelPage(),
     AccountPage()
   ];
   @override
@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 label: 'add'),
             BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.smart_display_outlined,
+                  Icons.video_collection_outlined,
                   color: currentIndex == 3 ? Colors.black : Colors.grey,
                 ),
                 label: 'Favorite'),
