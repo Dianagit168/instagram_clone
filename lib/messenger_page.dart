@@ -278,7 +278,9 @@ class _MessengerState extends State<Messenger> {
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const DetailChat(),
+                            builder: (context) => DetailChat(
+                              user_chat_detail: chat[index],
+                            ),
                           )),
                       leading: CircleAvatar(
                         child: Container(

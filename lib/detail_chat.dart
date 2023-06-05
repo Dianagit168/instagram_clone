@@ -3,7 +3,11 @@ import 'package:instagram/messenger_page.dart';
 import 'package:instagram/user_model.dart';
 
 class DetailChat extends StatefulWidget {
-  const DetailChat({Key? key}) : super(key: key);
+  // ignore: non_constant_identifier_names
+  final UserModel? user_chat_detail; // Dynamic
+  // ignore: non_constant_identifier_names
+  const DetailChat({Key? key, required this.user_chat_detail})
+      : super(key: key);
 
   @override
   State<DetailChat> createState() => _DetailChatState();
@@ -32,10 +36,12 @@ class _DetailChatState extends State<DetailChat> {
                           icon: const Icon(Icons.arrow_back_ios)),
                       CircleAvatar(
                         child: Container(
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
-                                  fit: BoxFit.cover, image: AssetImage(''))),
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(
+                                      '${widget.user_chat_detail!.image}'))),
                         ),
                       ),
                       const SizedBox(
@@ -43,13 +49,13 @@ class _DetailChatState extends State<DetailChat> {
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
-                            'CH AN',
-                            style: TextStyle(
+                            widget.user_chat_detail!.username.toString(),
+                            style: const TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 17),
                           ),
-                          Text('Active 5h ago'),
+                          const Text('Active 5h ago'),
                         ],
                       )
                     ],

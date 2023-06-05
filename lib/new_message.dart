@@ -75,7 +75,8 @@ class New_Messenger extends StatelessWidget {
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const DetailChat(),
+                          builder: (context) =>
+                              DetailChat(user_chat_detail: chat[index]),
                         )),
                     leading: CircleAvatar(
                       child: Container(
