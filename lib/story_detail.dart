@@ -6,14 +6,16 @@ class Story_Detail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'DIANA',
-        style: TextStyle(
-          fontSize: 50,
-          fontWeight: FontWeight.bold,
+    return Scaffold(
+      body: SafeArea(
+          child: Center(
+        child: Container(
+          color: Colors.yellow,
+          height: 100,
+          width: 100,
+          child: const Icon(Icons.verified),
         ),
-      ),
+      )),
     );
   }
 }
